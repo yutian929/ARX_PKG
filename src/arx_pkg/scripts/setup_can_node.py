@@ -127,8 +127,8 @@ def parse_can_device_info(result):
     
     vendor_id_pattern = re.compile(r'ID_VENDOR_ID=([0-9a-fA-F]+)')
     product_id_pattern = re.compile(r'ID_MODEL_ID=([0-9a-fA-F]+)')
-    serial_pattern = re.compile(r'ID_SERIAL=([^\n]+)')
-
+    serial_pattern = re.compile(r'ID_SERIAL_SHORT=([^\n]+)')
+    # breakpoint()
     id_vendor = re.search(vendor_id_pattern, result)
     id_product = re.search(product_id_pattern, result)
     serial = re.search(serial_pattern, result)
@@ -310,3 +310,7 @@ if __name__ == '__main__':
     except Exception as e:
         rospy.logerr(f"Unexpected error: {e}")
         sys.exit(1)
+
+
+
+'P: /devices/pci0000:00/0000:00:14.0/usb1/1-9/1-9.2/1-9.2:1.0/tty/ttyACM0\nN: ttyACM0\nL: 0\nS: serial/by-id/usb-Openlight_Labs_CANable2_b158aa7_github.com_normaldotcom_canable2.git_2068326F5052-if00\nS: serial/by-path/pci-0000:00:14.0-usb-0:9.2:1.0\nE: DEVPATH=/devices/pci0000:00/0000:00:14.0/usb1/1-9/1-9.2/1-9.2:1.0/tty/ttyACM0\nE: DEVNAME=/dev/ttyACM0\nE: MAJOR=166\nE: MINOR=0\nE: SUBSYSTEM=tty\nE: USEC_INITIALIZED=1202633339\nE: ID_BUS=usb\nE: ID_VENDOR_ID=16d0\nE: ID_MODEL_ID=117e\nE: ID_PCI_CLASS_FROM_DATABASE=Serial bus controller\nE: ID_PCI_SUBCLASS_FROM_DATABASE=USB controller\nE: ID_PCI_INTERFACE_FROM_DATABASE=XHCI\nE: ID_VENDOR_FROM_DATABASE=MCS\nE: ID_VENDOR=Openlight_Labs\nE: ID_VENDOR_ENC=Openlight\\x20Labs\nE: ID_MODEL=CANable2_b158aa7_github.com_normaldotcom_canable2.git\nE: ID_MODEL_ENC=CANable2\\x20b158aa7\\x20github.com\\x2fnormaldotcom\\x2fcanable2.git\nE: ID_REVISION=0200\nE: ID_SERIAL=Openlight_Labs_CANable2_b158aa7_github.com_normaldotcom_canable2.git_2068326F5052\nE: ID_SERIAL_SHORT=2068326F5052\nE: ID_TYPE=generic\nE: ID_USB_INTERFACES=:020201:0a0000:\nE: ID_USB_INTERFACE_NUM=00\nE: ID_USB_DRIVER=cdc_acm\nE: ID_USB_CLASS_FROM_DATABASE=Communications\nE: ID_USB_SUBCLASS_FROM_DATABASE=Abstract (modem)\nE: ID_PATH=pci-0000:00:14.0-usb-0:9.2:1.0\nE: ID_PATH_TAG=pci-0000_00_14_0-usb-0_9_2_1_0\nE: ID_MM_CANDIDATE=1\nE: DEVLINKS=/dev/serial/by-id/usb-Openlight_Labs_CANable2_b158aa7_github.com_normaldotcom_canable2.git_2068326F5052-if00 /dev/serial/by-path/pci-0000:00:14.0-usb-0:9.2:1.0\nE: TAGS=:systemd:\n\n'

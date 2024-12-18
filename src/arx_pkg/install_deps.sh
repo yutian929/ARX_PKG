@@ -1,2 +1,2 @@
-sudo apt insatll udev
-sudo apt insatll can-utils
+sudo apt install udev
+sudo apt install can-utils
