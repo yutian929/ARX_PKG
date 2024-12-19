@@ -7,9 +7,9 @@ namespace arx::r5
     R5Controller::R5Controller(ros::NodeHandle nh)
     {
         // 创建发布器
-        joint_state_publisher_ = nh.advertise<arm_control::PosCmd>("/r5_status", 10);
+        joint_state_publisher_ = nh.advertise<arx_msgs::PosCmd>("/r5_status", 10);
         // 创建订阅器
-        joint_state_subscriber_ = nh.subscribe<arm_control::PosCmd>(
+        joint_state_subscriber_ = nh.subscribe<arx_msgs::PosCmd>(
             "/ARX_VR_L", 10, &R5Controller::CmdCallback, this);
         // 定时器，用于发布关节信息
 
@@ -17,7 +17,7 @@ namespace arx::r5
         r5_Interfaces_ptr_ = std::make_shared<InterfacesThread>("can0",0);
     }
 
-    void R5Controller::CmdCallback(const arm_control::PosCmd::ConstPtr& msg)
+    void R5Controller::CmdCallback(const arx_msgs::PosCmd::ConstPtr& msg)
     {
         double input[6] = {msg->x, msg->y, msg->z, msg->roll, msg->pitch, msg->yaw};
         Eigen::Isometry3d transform = solve::Xyzrpy2Isometry(input);
@@ -31,7 +31,7 @@ namespace arx::r5
 
     void R5Controller::PubState(const ros::TimerEvent&)
     {
-        arm_control::PosCmd msg;
+        arx_msgs::PosCmd msg;
         // message.header.stamp = this->get_clock()->now();
 
         Eigen::Isometry3d transform = r5_Interfaces_ptr_->getEndPose();

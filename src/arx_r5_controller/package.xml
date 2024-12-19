@@ -21,9 +21,9 @@
     <build_export_depend>arx_r5_msg</build_export_depend>
     <exec_depend>arx_r5_msg</exec_depend>
 
-    <build_depend>arm_control</build_depend>
-    <build_export_depend>arm_control</build_export_depend>
-    <exec_depend>arm_control</exec_depend>
+    <build_depend>arx_msgs</build_depend>
+    <build_export_depend>arx_msgs</build_export_depend>
+    <exec_depend>arx_msgs</exec_depend>
 
     <build_depend>message_generation</build_depend>
     <exec_depend>message_runtime</exec_depend>

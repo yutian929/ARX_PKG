@@ -2,7 +2,7 @@
 
 #include <ros/ros.h>
 #include "arx_r5_src/interfaces/InterfacesThread.hpp"
-#include "arm_control/PosCmd.h"
+#include "arx_msgs/PosCmd.h"
 #include <chrono>
 #include <memory>
 
@@ -13,7 +13,7 @@ namespace arx::r5
     public:
         R5Controller(ros::NodeHandle nh);
 
-        void CmdCallback(const arm_control::PosCmd::ConstPtr& msg);
+        void CmdCallback(const arx_msgs::PosCmd::ConstPtr& msg);
         void PubState(const ros::TimerEvent&);
 
     private:

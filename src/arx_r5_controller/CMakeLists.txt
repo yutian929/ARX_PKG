@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 project(arx_r5_controller)
 
 find_package(catkin REQUIRED COMPONENTS
-        arm_control
+        arx_msgs
         arx_r5_msg
         roscpp
         std_msgs
@@ -11,7 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS arm_control arx_r5_msg roscpp std_msgs
+  CATKIN_DEPENDS arx_msgs arx_r5_msg roscpp std_msgs
 )
 
 include_directories(
