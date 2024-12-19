@@ -1,3 +1,4 @@
 build/
 devel/
-.vscode
+.vscode/
+arx_can.rules
