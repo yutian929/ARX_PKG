@@ -32,7 +32,7 @@ Follow these steps to prepare and install the ARX_PKG:
 
     ```bash
     cd ~
-    git clone <repository_url>.git
+    git clone https://github.com/yutian929/ARX_PKG.git
     ```
 
 2. **Navigate to the Workspace**
@@ -84,8 +84,8 @@ Setting up CAN communication is crucial for the master-slave functionality of th
     - **Disconnect All CAN Communication Devices:** Ensure that all CAN devices are disconnected before starting the setup.
     - **Sequentially Connect Devices:** Follow the on-screen instructions to connect the devices in the following order:
         1. Master Left
-        2. Master Right
-        3. Follower Left
+        2. Follower Left
+        3. Master Right
         4. Follower Right
 
     **Note:** This setup process only needs to be performed once.
