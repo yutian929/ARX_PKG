@@ -21,8 +21,11 @@ Before installing ARX_PKG, ensure that you have the following prerequisites inst
 - **ROS Noetic**
 - **Git**
 - **CAN Bus Hardware and Drivers**
+- **Realsense-ros**
 
 Ensure your ROS environment is properly set up by following the [ROS Noetic Installation Guide](http://wiki.ros.org/noetic/Installation/Ubuntu).
+
+If you want to use Realsense RGB-D Camera, ensure your Realsense-ros environment is set up by following the [librealsense 2.50.0 realsense-ros 2.3.2](https://gitee.com/linClubs/librealsense-2.50.0)
 
 ## 1. Prepare & Install
 
